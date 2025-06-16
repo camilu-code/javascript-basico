@@ -5,8 +5,8 @@ function mostrarMensaje(){
 
 // Variables
 function imprimirVariables(){
-    let nombre = "Rodrigo";
-    let edad = 42;
+    let nombre = "Camila";
+    let edad = 24;
     // Forma tradicional de concatenar cadenas
     console.log("nombre: ", nombre);
     console.log("edad: ", edad);
@@ -52,4 +52,25 @@ document.getElementById("btnAgregar").addEventListener(
         // Agregar item a la lista
         lista.appendChild(nuevoItem);
     }
-)
+);
+
+document.getElementById("btnAddPalabra").addEventListener(
+    "click", addPalabraLista
+);
+
+function addPalabraLista(){
+    // Obtener el input del HTML
+    let input = document.getElementById("txtEntrada");
+    // Obtner el valor del input
+    const texto = input.value.trim();
+    // Transformar a mayusculas
+    const textMayuscula = texto.toUpperCase();
+    // Agregar item a la lista
+    let lista = document.getElementById("lstPalabras");
+    // Creando un nuevo elemento HTML, li = list item
+    let nuevoItem = document.createElement("li");
+    // Agregando un contenido (texto) al item
+    nuevoItem.textContent = textMayuscula;
+    // Agregar item a la lista
+    lista.appendChild(nuevoItem);
+}
