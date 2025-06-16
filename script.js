@@ -1,18 +1,55 @@
-// fUNCION PARA OSTRAR UN CUADRO DE DIALOGO EMERGENTE
+// Funcion para mostrar un cuadro de dialogo emergente
 function mostrarMensaje(){
-    alert("HOLA MUNDO");
+    alert("Hola mundo :)");
 }
-function imprimirVariables() {
-    let nombre = "Camila"
-    let edad = 24;
-/// forma tradicional  de concatenar cadenas
+
+// Variables
+function imprimirVariables(){
+    let nombre = "Rodrigo";
+    let edad = 42;
+    // Forma tradicional de concatenar cadenas
     console.log("nombre: ", nombre);
     console.log("edad: ", edad);
-/// froma moderna de concatenar cademas 
-    console.log(`nombre: ${nombre}, edad ${edad}`);
-    console.error("Error: no funciona");
-    console.warn("Advertencia; zzz");
+    // Forma moderna de concatenar cadenas
+    console.log(`nombre: ${nombre}, edad: ${edad}`);
+    // Otros tipos de impresión
+    console.error("Error: bla bla bla");
+    console.warn("Advertencia: x x x");
 }
 
-
+function arreglos(){
+    // Arreglos
+    let frutas = ['manzana', 'pera', 'banana'];
+    // Bucle
+    for(let f of frutas){
+        console.log(f)
+    }
+    // Condicionales
+    if (frutas[1] === 'pera'){
+        console.log("La segunda fruta es una pera");
+    }else{
+        console.log('No es una pera');
+    }
 }
+// Agregar evente a un elemento HTML
+document.getElementById("btnSaludar").addEventListener(
+    "click", function () {
+        console.log("Hola!");
+    }
+);
+
+// Modificar el HTML a través del DOM
+document.getElementById("btnAgregar").addEventListener(
+    "click", () => {
+        // Obtener el elemnto "lista" (ul) del documento HTML
+        let lista = document.getElementById("lista");
+        // Creando un nuevo elemento HTML, li = list item
+        let nuevoItem = document.createElement("li");
+        // Obteniendo el total de ítems de la lista
+        let totalItems = lista.childElementCount;
+        // Agregando un contenido (texto) al item
+        nuevoItem.textContent = `Item ${totalItems + 1}`;
+        // Agregar item a la lista
+        lista.appendChild(nuevoItem);
+    }
+)
